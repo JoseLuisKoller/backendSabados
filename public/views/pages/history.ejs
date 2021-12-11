@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body class="container">
+    <header><%-include('../partials/header')%></header>
+    <main>
+      <div class="container text-center">
+        <div class="d-flex justify-content-center m-5">
+          <a href="./formulario" class="btn btn-primary btn-lg"
+            >Agregar Productos</a
+          >
+        </div>
+        <% if(item.length > 0) { %>
+        <div class="container">
+          <div class="row">
+            <div class="col"><h2>Titulo</h2></div>
+            <div class="col"><h2>Precio</h2></div>
+            <div class="col"><h2>Imagen</h2></div>
+          </div>
+          <hr />
+          <% item.forEach(function(product) { %>
+          <div class="row d-flex align-items-center">
+            <div class="col border-end border-3">
+              <strong><%= product.name %></strong>
+            </div>
+            <div class="col border-end border-3">$<%= product.price %></div>
+            <div class="col">
+              <img
+                class="img-fluid"
+                style="max-width: 128px"
+                src="<%"
+                ="product.imgURL"
+                %
+              />
+              alt="" />
+            </div>
+          </div>
+          <hr />
+          <% })%>
+        </div>
+        <%}else{%>
+        <h1>NO Hay items!</h1>
+
+        <%}%>
+      </div>
+    </main>
+    <footer><%- include('../partials/footer')%></footer>
+  </body>
+</html>
