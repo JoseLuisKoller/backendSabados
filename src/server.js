@@ -1,6 +1,4 @@
 const express = require("express");
-const Archivo = require("./Archivos");
-// const mensajes = new Archivo("mensajes.txt");
 const app = express();
 const { Server: HttpServer } = require("http");
 const { Server: IOServer } = require("socket.io");
